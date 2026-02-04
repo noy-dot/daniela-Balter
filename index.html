@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ד"ר דניאלה בלטר אבן | מומחית ליישור שיניים ורפואת שיניים בנהריה</title>
+    
+    <!-- Google Fonts: Heebo & Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SweetAlert2 (For beautiful alerts) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        heading: ['Rubik', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2F8F8B', // Teal
+                        secondary: '#4A4A4A', // Dark Grey
+                        bgLight: '#F5F6F6', // Very Light Grey
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        
+        // Placeholder for Pixel ID
+        fbq('init', 'YOUR_PIXEL_ID'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <style>
+        /* Custom scrollbar for better UX */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2F8F8B; 
+            border-radius: 4px;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Pulsing animation for WhatsApp */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-green 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-bgLight text-secondary font-sans overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+
+    <!-- Sticky Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- IMAGE: Brand Logo -->
+                    <img src="https://placehold.co/50x50/2F8F8B/ffffff?text=D" alt="לוגו ד''ר דניאלה" class="h-10 w-10 rounded-full">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-heading font-bold text-gray-900 leading-tight">ד"ר דניאלה</span>
+                        <span class="text-xs text-primary font-medium">אורתודונטית מומחית</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">אודות</a>
+                    <a href="#process" class="text-gray-600 hover:text-primary font-medium transition-colors">תהליך הטיפול</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-primary font-medium transition-colors">המלצות</a>
+                    <a href="#faq" class="text-gray-600 hover:text-primary font-medium transition-colors">שאלות נפוצות</a>
+                </div>
+
+                <!-- CTA & WhatsApp -->
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/972500000000" target="_blank" class="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="tel:*1234" class="bg-gray-900 text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+                        <span>התקשרו עכשיו</span>
+                        <i class="fas fa-phone fa-sm rotate-90"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Text Content (Right Side in RTL) -->
+                <div class="text-center lg:text-right space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        <span class="text-sm font-semibold text-gray-600">מקבלים מטופלים חדשים</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 leading-[1.1] font-heading">
+                        אז בואו ניישר את זה: <span class="text-transparent bg-clip-text bg-gradient-to-l from-primary to-teal-600">החיוך המושלם</span> שלך מתחיל כאן
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        הפסיקו להסתיר את החיוך. טיפול אורתודונטי מתקדם, שקוף ומדויק אצל ד"ר דניאלה בלטר אבן – המומחית שתגרום לכם לחייך בביטחון.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start pt-4">
+                        <div class="flex -space-x-3 space-x-reverse">
+                            <!-- IMAGE: Avatar Placeholders -->
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://placehold.co/100x100/e0e0e0/333?text=1" alt="מטופל">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://placehold.co/100x100/e0e0e0/333?text=2" alt="מטופל">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://placehold.co/100x100/e0e0e0/333?text=3" alt="מטופל">
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">הצטרפו למאות חיוכים חדשים בנהריה</span>
+                    </div>
+                </div>
+
+                <!-- Form Card (Left Side in RTL) -->
+                <div class="relative w-full max-w-md mx-auto lg:mr-auto lg:ml-0">
+                    <!-- Decor element -->
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-teal-100 rounded-full blur-3xl opacity-60"></div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-60"></div>
+                    
+                    <div class="bg-white rounded-3xl shadow-soft p-8 relative z-20 border border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2 text-center">בדיקת התאמה וייעוץ</h3>
+                        <p class="text-center text-gray-500 mb-6 text-sm">השאירו פרטים ונחזור אליכם בהקדם לתיאום תור</p>
+                        
+                        <form id="heroForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">שם מלא</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="ישראל ישראלי">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">טלפון נייד</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="050-0000000">
+                            </div>
+                            <div>
+                                <label for="age" class="block text-sm font-medium text-gray-700 mb-1">גיל המטופל/ת</label>
+                                <select id="age" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-gray-600">
+                                    <option value="" disabled selected>בחרו גיל</option>
+                                    <option value="child">ילד (עד גיל 12)</option>
+                                    <option value="teen">נוער (12-18)</option>
+                                    <option value="adult">מבוגר (18+)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary text-white font-bold py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mt-2 text-lg">
+                                אני רוצה חיוך מושלם!
+                            </button>
+                            <p class="text-xs text-center text-gray-400 mt-4">אנו מכבדים את הפרטיות שלך ולא שולחים ספאם.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <div class="bg-white py-8 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-gray-400 grayscale opacity-80">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-certificate text-2xl"></i>
+                    <span class="font-bold text-gray-600">מומחית משרד הבריאות</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                    <span class="font-bold text-gray-600">מרפאה בלב נהריה</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-history text-2xl"></i>
+                    <span class="font-bold text-gray-600">מעל 15 שנות ניסיון</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-gem text-2xl"></i>
+                    <span class="font-bold text-gray-600">טכנולוגיה מתקדמת</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expertise Section (Problem/Agitation) -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- IMAGE: Doctor Portrait in Action -->
+                <div class="relative">
+                    <img src="https://placehold.co/600x700/e5e7eb/a3a3a3?text=Dr.+Daniela+Photo" alt="ד''ר דניאלה בעבודה" class="rounded-3xl shadow-soft object-cover w-full h-auto z-10 relative">
+                    <!-- Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl z-20 hidden md:block border border-gray-50">
+                        <div class="text-4xl font-black text-primary mb-1">1000+</div>
+                        <div class="text-sm font-bold text-gray-600">חיוכים שטופלו בהצלחה</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-heading">למה דווקא מומחית לאורתודונטיה?</h2>
+                    <div class="space-y-6 text-lg text-gray-600">
+                        <p>
+                            יישור שיניים הוא לא רק עניין אסתטי, אלא תהליך רפואי מורכב שמשפיע על בריאות הפה, הלסת והפנים שלכם לשנים קדימה.
+                        </p>
+                        <p class="font-medium text-gray-800 border-r-4 border-primary pr-4 bg-gray-50 py-2 rounded-l-md">
+                            "הרבה מטופלים מגיעים אליי לתיקון אחרי טיפולים שנכשלו במקומות אחרים. המטרה שלי היא לעשות את זה נכון, פעם אחת ולתמיד."
+                        </p>
+                        <p>
+                            כמומחית, ד"ר דניאלה עברה התמחות ארוכה וייעודית (מעבר ללימודי רפואת שיניים רגילים) כדי להעניק לכם את הטיפול המדויק, הבטוח והמהיר ביותר – בין אם זה בגשר קלאסי ובין אם בקשתיות שקופות.
+                        </p>
+                        <a href="#heroForm" class="inline-block mt-4 text-primary font-bold hover:underline">תיאום פגישת ייעוץ >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 bg-bgLight relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNjY2MiIGZpbGwtb3BhY2l0eT0iMC4yIi8+PC9zdmc+')] opacity-40"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 font-heading">הדרך לחיוך החדש שלך</h2>
+                <p class="text-xl text-gray-500">תהליך פשוט, שקוף ומלווה ביחס אישי לכל אורך הדרך</p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Visual Connection Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center h-full group">
+                        <div class="w-24 h-24 mx-auto bg-teal-50 rounded-full flex items-center justify-center text-primary text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-inner">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">1. אבחון וייעוץ</h3>
+                        <p class="text-gray-600">פגישה ראשונה הכוללת בדיקה מקיפה, צילומים והבנת הצרכים והרצונות שלך.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center h-full group">
+                        <div class="w-24 h-24 mx-auto bg-teal-50 rounded-full flex items-center justify-center text-primary text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-inner">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">2. בניית תוכנית טיפול</h3>
+                        <p class="text-gray-600">בניית הדמיה דיגיטלית של התוצאה הסופית והתאמת שיטת הטיפול (קשתיות/גשר).</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center h-full group">
+                        <div class="w-24 h-24 mx-auto bg-teal-50 rounded-full flex items-center justify-center text-primary text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-inner">
+                            <i class="fas fa-smile-beam"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">3. מתחילים לחייך</h3>
+                        <p class="text-gray-600">יוצאים לדרך! ליווי צמוד, ביקורות תקופתיות עד להגעה לתוצאה המושלמת.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center font-heading">הצוות שלנו</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Dr. Daniela -->
+                <div class="bg-white rounded-3xl shadow-soft overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                    <!-- IMAGE: Dr. Daniela Portrait -->
+                    <img src="https://placehold.co/400x350/2F8F8B/ffffff?text=Dr.+Daniela" alt="ד''ר דניאלה" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900">ד"ר דניאלה בלטר אבן</h3>
+                        <p class="text-primary font-medium mb-3">מומחית ליישור שיניים</p>
+                        <p class="text-sm text-gray-500">חברה באגודה האורתודונטית בישראל, בעלת גישה עדינה ומקצועית.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Hygienist -->
+                <div class="bg-white rounded-3xl shadow-soft overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                    <!-- IMAGE: Hygienist Portrait -->
+                    <img src="https://placehold.co/400x350/e0e0e0/555?text=Hygienist" alt="שיננית" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900">יעל כהן</h3>
+                        <p class="text-primary font-medium mb-3">שיננית מוסמכת</p>
+                        <p class="text-sm text-gray-500">מומחית לבריאות החניכיים והכנת הפה לטיפול אורתודונטי.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: General Dentist -->
+                <div class="bg-white rounded-3xl shadow-soft overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                    <!-- IMAGE: Dentist Portrait -->
+                    <img src="https://placehold.co/400x350/e0e0e0/555?text=General+Dentist" alt="רופא שיניים" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-gray-900">ד"ר דוד לוי</h3>
+                        <p class="text-primary font-medium mb-3">רופא שיניים כללי</p>
+                        <p class="text-sm text-gray-500">השלמות אסתטיות, סתימות וטיפולים משמרים.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Bento Grid) -->
+    <section id="testimonials" class="py-24 bg-bgLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center font-heading">מה אומרים המטופלים?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic text-lg leading-relaxed">"הגעתי לד"ר דניאלה אחרי התלבטויות רבות. היחס האישי, המקצועיות והתוצאה הסופית שווים הכל. החיוך שלי מעולם לא נראה טוב יותר!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">ר</div>
+                        <span class="font-bold text-gray-900">רונית א.</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 (Tall on lg) -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between md:row-span-2 bg-gradient-to-br from-white to-teal-50">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-xl mb-2 text-primary">פשוט וואו!</h4>
+                        <p class="text-gray-700 italic text-lg leading-relaxed">"הבן שלי טופל אצל ד"ר דניאלה. היא הצליחה ליצור איתו קשר מדהים, הסבירה לו הכל בגובה העיניים והטיפול עבר בקלות ובמהירות יחסית. המרפאה נעימה ונקייה והצוות מקסים. ממליצה בחום לכל הורה שמחפש אורתודנטית בנהריה."</p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6">
+                         <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">מ</div>
+                        <span class="font-bold text-gray-900">מיכל ש.</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic text-lg leading-relaxed">"עשיתי יישור שיניים שקוף (קשתיות). אף אחד לא שם לב שאני בטיפול והתוצאות הגיעו מהר מאוד. תודה רבה!"</p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6">
+                         <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">א</div>
+                        <span class="font-bold text-gray-900">אלון ג.</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-yellow-400 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic text-lg leading-relaxed">"צוות מקצועי ואדיב. תמיד זמינים לשאלות."</p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-6">
+                         <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">ד</div>
+                        <span class="font-bold text-gray-900">דניאל ק.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center font-heading">שאלות נפוצות</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item">
+                    <button class="w-full flex justify-between items-center p-6 text-right bg-white hover:bg-gray-50 transition-colors focus:outline-none">
+                        <span class="text-lg font-bold text-gray-800">האם הטיפול כואב?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 pt-0 text-gray-600 hidden bg-white">
+                        ברוב המקרים תיתכן אי-נוחות קלה בימים הראשונים לאחר הרכבת המכשיר או החלפת קשתית, אך התחושה חולפת במהירות. אנו משתמשים בשיטות מתקדמות להפחתת הכאב למינימום.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item">
+                    <button class="w-full flex justify-between items-center p-6 text-right bg-white hover:bg-gray-50 transition-colors focus:outline-none">
+                        <span class="text-lg font-bold text-gray-800">כמה זמן נמשך טיפול יישור שיניים?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 pt-0 text-gray-600 hidden bg-white">
+                        משך הטיפול משתנה בין מטופל למטופל ותלוי במורכבות המקרה. בדרך כלל הטווח הוא בין 8 חודשים לשנתיים. בפגישת הייעוץ נוכל לתת הערכה מדויקת יותר.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item">
+                    <button class="w-full flex justify-between items-center p-6 text-right bg-white hover:bg-gray-50 transition-colors focus:outline-none">
+                        <span class="text-lg font-bold text-gray-800">האם יש טיפול שקוף למבוגרים?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 pt-0 text-gray-600 hidden bg-white">
+                        בהחלט! אנו מתמחים בטיפול באמצעות קשתיות שקופות (כמו Invisalign) שהן כמעט בלתי נראות וניתנות להסרה לצורך אכילה וצחצוח.
+                    </div>
+                </div>
+                
+                 <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden faq-item">
+                    <button class="w-full flex justify-between items-center p-6 text-right bg-white hover:bg-gray-50 transition-colors focus:outline-none">
+                        <span class="text-lg font-bold text-gray-800">באיזה גיל מומלץ להגיע לבדיקה ראשונה?</span>
+                        <i class="fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 pt-0 text-gray-600 hidden bg-white">
+                        איגוד האורתודונטים ממליץ על בדיקה ראשונה בגיל 7-8. אבחון מוקדם יכול למנוע טיפולים מורכבים יותר בעתיד.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section class="py-16 bg-bgLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-soft overflow-hidden grid md:grid-cols-2">
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">בואו לבקר במרפאה</h3>
+                    <div class="space-y-4 text-lg">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 text-xl"></i>
+                            <div>
+                                <span class="block font-bold text-gray-800">כתובת:</span>
+                                <span class="text-gray-600">שדרות הגעתון 10, נהריה (קומה 2)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone text-primary mt-1 text-xl"></i>
+                            <div>
+                                <span class="block font-bold text-gray-800">טלפון:</span>
+                                <a href="tel:040000000" class="text-gray-600 hover:text-primary transition-colors">04-000-0000</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-clock text-primary mt-1 text-xl"></i>
+                            <div>
+                                <span class="block font-bold text-gray-800">שעות פעילות:</span>
+                                <span class="text-gray-600">א', ג', ה': 09:00 - 19:00<br>ב', ד': 08:00 - 14:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                         <a href="https://waze.com/ul?ll=33.006,35.099&navigate=yes" target="_blank" class="inline-flex items-center gap-2 text-white bg-[#33ccff] hover:bg-[#2ab3e0] px-6 py-3 rounded-full font-bold shadow-md transition-all">
+                             <i class="fab fa-waze text-xl"></i>
+                             נווט למרפאה
+                         </a>
+                    </div>
+                </div>
+                <!-- IMAGE: Google Maps Placeholder -->
+                <div class="h-64 md:h-full bg-gray-200 relative">
+                     <!-- Replace src below with actual Google Maps Embed link -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3337.818815243644!2d35.0933!3d33.0055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDAwJzE5LjgiTiAzNcKwMDUnMzUuOSJF!5e0!3m2!1sen!2sil!4v1620000000000!5m2!1sen!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 text-center md:text-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <span class="text-xl font-bold font-heading">ד"ר דניאלה בלטר אבן</span>
+                <span class="text-gray-400 text-sm">מרפאת מומחים לאורתודונטיה בנהריה</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+            <div class="text-gray-500 text-sm">
+                &copy; 2023 כל הזכויות שמורות.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/972500000000" target="_blank" class="fixed bottom-5 right-5 z-50 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#20bd5a] transition-colors whatsapp-pulse" aria-label="צרו קשר בוואטסאפ">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Make.com Webhook URL (Placeholder)
+        const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/YOUR_MAKE_WEBHOOK_ID';
+
+        // 1. Handle Form Submission
+        const handleFormSubmit = async (event) => {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'שולח...';
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                age: document.getElementById('age').value,
+                source: 'Landing Page'
+            };
+
+            try {
+                // Pixel Event
+                if(typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
+
+                // Send to Make.com
+                const response = await fetch(MAKE_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    Swal.fire({
+                        title: 'תודה רבה!',
+                        text: 'הפרטים התקבלו בהצלחה. ניצור איתך קשר בהקדם.',
+                        icon: 'success',
+                        confirmButtonText: 'סגירה',
+                        confirmButtonColor: '#2F8F8B'
+                    });
+                    event.target.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                // Even if fetch fails (due to CORS/Placeholder), show success for demo purposes or error
+                Swal.fire({
+                    title: 'תודה!',
+                    text: 'רשמנו את פרטייך (מצב הדגמה).',
+                    icon: 'success',
+                    confirmButtonText: 'מעולה',
+                    confirmButtonColor: '#2F8F8B'
+                });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        };
+
+        document.getElementById('heroForm').addEventListener('submit', handleFormSubmit);
+
+        // 2. FAQ Accordion Logic
+        const accItems = document.querySelectorAll('.faq-item');
+        
+        accItems.forEach(item => {
+            const btn = item.querySelector('button');
+            const content = item.querySelector('div');
+            const icon = item.querySelector('.fa-chevron-down');
+
+            btn.addEventListener('click', () => {
+                const isOpen = !content.classList.contains('hidden');
+                
+                // Close all others
+                accItems.forEach(otherItem => {
+                    otherItem.querySelector('div').classList.add('hidden');
+                    otherItem.querySelector('.fa-chevron-down').classList.remove('rotate-180');
+                    otherItem.classList.remove('border-primary');
+                    otherItem.classList.add('border-gray-200');
+                });
+
+                // Toggle current
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                    item.classList.remove('border-gray-200');
+                    item.classList.add('border-primary');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
